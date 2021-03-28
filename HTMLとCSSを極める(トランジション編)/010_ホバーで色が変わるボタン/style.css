@@ -9,4 +9,10 @@
   margin: 50px 0;
   font-weight: 600; /* 100〜900で100区切りの値を設定できる デフォルト値は500 */
   cursor: pointer;
+  transition: all 0.3s ease 1s, background-color 0.3s ease 2s; /* hover時の色の切り替わりのタイミング時間 第一引数はbackground-color等の指定ができる 今回はall */
+  /* 1秒後に文字色が変わり2秒後に背景色が変わる */
+}
+.btn:hover {
+  background-color: black;
+  color: white;
 }
