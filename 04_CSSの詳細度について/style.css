@@ -1,0 +1,24 @@
+.parent {
+  color: blue;
+  font-weight: 600;
+}
+
+span {
+  color: purple; /* この色になる */
+}
+
+.cls {
+  color: orange; /* このクラスがこの色になる */
+}
+
+#first {
+  color: magenta; /* idが詳細度高い */
+}
+
+.parent span {
+  color: red; /* idがついてるところは magentaを適用 他のspanはredが適用される */
+}
+
+.parent span {
+  color: black; /* 上書きされる */
+}
