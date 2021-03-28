@@ -1,0 +1,30 @@
+$cWhite: white;
+$cBlack: black;
+
+#container {
+  text-align: center;
+}
+
+.btn {
+  background-color: $cWhite;
+  color: black;
+  border: 1px solid $cBlack;
+  padding: 10px 40px;
+  margin: 50px 0;
+  font-weight: 600; /* 100〜900で100区切りの値を設定できる デフォルト値は500 */
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    /* &の部分が.btnに変換される */
+    background-color: $cBlack;
+    color: white;
+  }
+  &-cube {
+    background-color: $cBlack;
+
+    .inner { /* btn-cube .innerになる */
+      background-color: $cBlack;
+    }
+  }
+}
