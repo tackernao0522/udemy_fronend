@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.parent {
+  color: blue;
+  /* .parentの一階層下のみ適用 */
+}
+
+.parent > .element {
+  color: purple;
+  /* .parent > .element.second-child (半角スペースを空けるとelement要素の中のsecond-childになるが
+    空けない場合はelementとsecond-childの二つがついた要素という意味になる */
+}
+
+.parent > .element.second-child {
+  color: black;
+}
+
+.element {
+  color: red;
+}
+
+/* 詳細度が低いので適用されない */
+/*# sourceMappingURL=style.css.map */
