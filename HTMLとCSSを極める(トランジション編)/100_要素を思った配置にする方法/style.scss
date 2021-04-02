@@ -1,0 +1,71 @@
+.parent {
+  background-color: rgb(81, 218, 218);
+  height: 600px;
+  width: 100%;
+}
+
+.child {
+  background-color: orange;
+  // width: 100px;
+  // height: 100px;
+  font-weight: 600;
+  flex-grow: 1; // flex-growに1を設定すると親要素の幅に合わせて均等に幅が配置される
+  flex-basis: 300px; // 全ての要素にこれを設定して振り分けられない場合は均等振り分けられることになる
+}
+.child.v1 {
+  // flex-basis: 300px; // 300pxを基準にしてこちらの要素を確保する そしてv2とv3が振り分けられる
+  flex-shrink: 0; // .childにflex-basis: 300pxと指定している場合にこれを使うと必ず.child.v1は300px確保されることになる 残りを均等に分ける
+}
+.child.v2 {
+  // width: 200px;
+  // height: 200px;
+  background-color: palevioletred;
+  flex-grow: 2; // 1:2:1の比率で親要素の幅を満たすように幅が広がる
+}
+.child.v3 {
+  background-color: rebeccapurple;
+  flex-grow: 3; // 1:2:3となる
+}
+
+/**
+ * 横方向のレイアウト
+ */
+/* インライン要素に対して */
+// .parent {
+//   text-align: right;
+//   letter-spacing: -6px; // -6px以下にするとスペースが空かなくなる(インライン要素毎の文字の間隔を調整している
+// }
+// .child {
+//   display: inline-block;
+// }
+
+/* ブロック要素を中央揃え */
+// .parent {
+
+// }
+// .child {
+//   margin: 0 auto; // 親要素(.parent)にwidthが指定されている場合にこちらを設定すると中央に来る
+// }
+
+/**
+ * 上下方向のレイアウト
+ */
+// .parent {
+//   position: relative;
+// }
+// .child {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   // 49行目〜52行目のセットで中央に配置することができる
+// }
+
+.parent {
+  display: flex; // 横並びになる
+  flex-direction: row-reverse; // 縦並びにする justify-content: center; を指定すると逆に上下の中央に配置される align-items: flex-end;にした場合には右端に配置される rowにするとデフォルトの設定になる row-reverseとするとchild 2 child 3 childの順番で逆に並ぶ
+  justify-content: center; // flex-endだと要素が右に配置される centerだと左右中央に配置される space-aroundとすると均等に間に間隔が空く space-beweenとすると両端の間隔は無くして他の間を均等にする
+  // flex-wrap: wrap; // 300pxを必ず確保して表示したい場合にはこれを指定すると横に300pxを確保されない場合には改行されて表示される
+  // align-items: flex-end; // centerだと縦の中央, flex-startだと上の中央, flex-endだと下の中央に配置される
+}
+
