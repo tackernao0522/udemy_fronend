@@ -1,0 +1,62 @@
+$cWhite: white;
+$cBlack: black;
+
+#container {
+  text-align: center;
+}
+.answer {
+  .btn {
+    // .answer .btn
+    position: relative;
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    width: 150px;
+    height: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    &.cubic {
+      // .answer .btn.cubic
+      & span {
+        // .answer .btn.cubic span
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid $cBlack;
+        line-height: 48px;
+        text-align: center;
+        transition: all 0.3s;
+        transform-origin: center center -25px;
+      }
+
+      & .hovering {
+        // .answer .btn.cubic .hovering
+        background-color: $cBlack;
+        color: $cWhite;
+        transform: rotateX(90deg);
+      }
+
+      & .default {
+        // .answer .btn.cubic .default
+        background-color: $cWhite;
+        color: $cBlack;
+        transform: rotateX(0);
+      }
+
+      &:hover {
+        // .answer .btn.cubic:hover
+        & .hovering {
+          // .answer .btn.cubic:hover .hovering
+          transform: rotateX(0);
+        }
+        & .default {
+          // .answer .btn.cubic:hover .defaut
+          transform: rotateX(-90deg);
+        }
+      }
+    }
+  }
+}

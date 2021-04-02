@@ -1,0 +1,66 @@
+$cWhite: white;
+$cBlack: black;
+
+#container {
+  text-align: center;
+}
+.try {
+  .btn {
+    // .try .btn
+    position: relative;
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    width: 150px;
+    height: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    &.cubic {
+      // .try .btn.cubic
+      & span {
+        // .try .btn.cubic span
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid $cBlack;
+        line-height: 48px; // 親の要素は50pxなので2px余ることになりborderの太さは1pxであり、上下に1pxなので40pxに2pxを足すと50pxになる 要は親のheightと同じにする ※2行以上はおかしくなるが1行ならこれで良い
+        text-align: center; // 左右の中央揃え
+        transition: all 0.3s;
+        transform-origin: center center -25px; // X軸はcenter Y軸はcenter Z軸は-25px
+      }
+
+      & .hovering {
+        // .try .btn.cubic .hovering
+        background-color: $cBlack;
+        color: $cWhite;
+        transform: rotateX(
+          90deg
+        ); // 上から回転なので-(マイナス)ではなく+(プラス)90degにする
+      }
+
+      & .default {
+        // .try .btn.cubic .default
+        background-color: $cWhite;
+        color: $cBlack;
+        transform: rotateX(0); // hover時に回転させれば良いので0になる
+      }
+
+      &:hover {
+        // .try .btn.cubic:hover
+        & .hovering {
+          // .try .btn.cubic:hover .hovering
+          transform: rotateX(
+            0
+          ); // 回転した際には正面を向くことになるので0としておく
+        }
+        & .default {
+          // .try .btn.cubic:hover .default
+          transform: rotateX(-90deg);
+        }
+      }
+    }
+  }
+}
