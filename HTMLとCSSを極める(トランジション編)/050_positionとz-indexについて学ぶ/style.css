@@ -1,48 +1,4 @@
-/* relativeは基準にしたい親要素につける absoluteは子要素等につけるtop: 0;なら
-relativeをつけた親要素の基準から0である */
 #container {
   padding: 1rem;
-  background-color: gray;
-  position: relative;
-  height: 1500px;
-  /* overflow: hidden; */
-}
-
-div {
-  font-weight: 600;
-  padding: 0.5rem;
-  font-size: 1.1em;
-  width: 150px;
-  height: 150px;
-  box-shadow: 7px 7px 0 0 #000;
-}
-
-.div-1 {
-  background: orange;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-}
-.div-2 {
-  background: tomato;
-  position: relative;
-  z-index: 20;
-}
-.div-3 {
-  background: teal;
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  z-index: auto;
-  height: 800px;
-}
-.div-4 {
-  width: 80px;
-  height: 80px;
-  background-color: violet;
-  position: sticky;
-  top: 30px;
-  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */

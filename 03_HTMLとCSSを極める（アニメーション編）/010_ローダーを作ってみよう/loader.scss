@@ -1,0 +1,41 @@
+$cBlack: black;
+
+.three-dot-spinner {
+  text-align: center;
+
+  & div {
+    // .three-dot-spinner div
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: $cBlack;
+    border-radius: 50%; // 丸くなる 9pxでも同じく丸くなる
+    animation: sk-bouncedelay 1.4s infinite; //1.4秒かけて実行される 永遠にループ処理を定義する場合にinfiniteを使う
+  }
+  // 伸縮の遅延の設定
+  & .bounce1 {
+    // .three-dot-spinner .bounce1
+    animation-delay: -0.32s; // マイナスで設定すると他の要素よりも早いタイミングで動作が行われることになる
+  }
+
+  & .bounce2 {
+    // .three-dot-spinner .bounce2
+    animation-delay: -0.16s;
+  }
+}
+
+@keyframes sk-bouncedelay {
+  // この中にアニメーションの定義を設定する
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
