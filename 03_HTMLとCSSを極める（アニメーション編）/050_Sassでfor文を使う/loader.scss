@@ -1,0 +1,38 @@
+$cBlack: black;
+
+.three-dot-spinner {
+  text-align: center;
+
+  & div {
+    // .three-dot-spinner div
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: $cBlack;
+    border-radius: 50%; // 丸くなる 9pxでも同じく丸くなる
+    animation: sk-bouncedelay 1.4s infinite; //1.4秒かけて実行される 永遠にループ処理を定義する場合にinfiniteを使う
+
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        animation-delay: -0.32s / $i;
+        // background-image: url('/images/image#{$i}.png'); // 例
+      }
+    }
+  }
+}
+
+@keyframes sk-bouncedelay {
+  // この中にアニメーションの定義を設定する
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
