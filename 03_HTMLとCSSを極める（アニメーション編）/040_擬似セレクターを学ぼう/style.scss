@@ -1,0 +1,29 @@
+a {
+  color: orange;
+
+  &:visited {
+    color: blue;
+  }
+
+  &:hover {
+    color: red;
+  }
+
+  &:focus {
+    color: green; // 最後にクリックしたaタグに対して
+  }
+
+  &:active {
+    color: purple; // クリックを解除してない時
+  }
+}
+
+div {
+  & span {
+    color: olive;
+
+    &:not(.cls) { // .clsに一致しないセレクタに適用
+      color: purple;
+    }
+  }
+}
